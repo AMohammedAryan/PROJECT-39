@@ -47,7 +47,6 @@ class Game{
                  drawSprites();
                  for(var plr in allPlayers){
                     
-                    
                      index = index+1;
                      x = 500-allPlayers[plr].distance;
                      y=500;
