@@ -62,7 +62,14 @@ class Game{
                          text(allPlayers[plr].name ,x-25,y+25);
 
                          
-                }
+                     }
+                    
+                     
+                 
+                 }
+                
+                
+                 
 
                 if (keyIsDown(RIGHT_ARROW) && player.index !== null) {
                     player.distance -= 10
@@ -71,13 +78,6 @@ class Game{
                 if (keyIsDown(LEFT_ARROW) && player.index !== null) {
                     player.distance += 10
                     player.update();
-                }
-
-                function destruct(obj){
-                    
-                    if (obj.isTouching(player1) || obj.isTouching(player2)) {
-                         obj.destroy();
-                    }
                 }
             
                  if (frameCount % 20 === 0) {
@@ -96,21 +96,20 @@ class Game{
                          case 5: fruits.addImage("fruit1", fruit5_img);
                          break;
                      }
-                     fruitGroup.add(fruits)
-                     fruits.lifetime = height/fruits.velocityY;
+                     fruitGroup.add(fruits);
+                     
                  }
-
-                 if(fruitGroup.isTouching(player1) || fruitGroup.isTouching(player2)){
-
-                    fruitGroup.destroyEach();
-                 }
+                 
+                  if (player.index !== null) {
+                     //fill code here, to destroy the objects.
+                     if(fruitGroup.x > height){
+                        fruitGroup.destroyEach();
+                        score = score + 1;
+                     }
+                  }
     }
 
     end(){
        console.log("Game Ended");
     }
-
-
-}
-
 }
