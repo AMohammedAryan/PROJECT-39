@@ -4,7 +4,7 @@ var gameState =0;
 var playerCount = 0;
 var allPlayers;
 
-var touchCriteria;
+var score;
 
 var player, form,game;
 var player1,player2;
